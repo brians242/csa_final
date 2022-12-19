@@ -33,6 +33,71 @@ public class Scan {
     }
     return alcoholInfo;
   }
+////////// Unfinished
+    public static String specificCountryInfo() {
+    
+    alcoholSet alcoholInfo[] = read();
+
+    Scanner user = new Scanner(System.in);
+    System.out.println("What country?");
+    String userInfo = user.nextLine().toLowerCase();
+    
+    String allOfTheCountries = "All of the Countries: \n";
+      for (int i = 0; i < alcoholInfo.length; i++) {
+        allOfTheCountries += alcoholInfo[i].getCountry();
+      }
+    System.out.println("placeholder");  
+    user.close();
+    return "ah";
+  }
+//////////
+  public static String countryInfo() {
+
+    Scanner user = new Scanner(System.in);
+    System.out.println("What country would you like the information of?");
+    String userInfo = user.nextLine().toLowerCase();
+    
+    alcoholSet alcoholInfo[] = read();
+
+    String placeholder = "";
+    for (int i = 0; i < alcoholInfo.length; i++) {
+      if (alcoholInfo[i].getCountry().toLowerCase().equals(userInfo)) {
+        String countrysTotalInfo = ("\n" + alcoholInfo[i].getCountry() + "'s alcohol consumption stats: \n \n");
+        countrysTotalInfo += "Total consumption percentage: ";
+        countrysTotalInfo += String.valueOf(Double.valueOf(alcoholInfo[i].getTotalConsumption()).doubleValue());
+        countrysTotalInfo += " \n";
+        countrysTotalInfo += "Recorded consumption percentage: "; 
+        countrysTotalInfo += String.valueOf(Double.valueOf(alcoholInfo[i].getRecordedConsumption()).doubleValue());
+        countrysTotalInfo += " \n";
+        countrysTotalInfo += "Unrecorded consumption percentage: ";
+        countrysTotalInfo += String.valueOf(Double.valueOf(alcoholInfo[i].getUnrecordedConsumption()).doubleValue());
+        countrysTotalInfo += " \n";
+        countrysTotalInfo += "Beer percentage: ";
+        countrysTotalInfo += String.valueOf(Double.valueOf(alcoholInfo[i].getBeerPercentage()).doubleValue());
+        countrysTotalInfo += " \n";
+        countrysTotalInfo += "Wine percentage: ";
+        countrysTotalInfo += String.valueOf(Double.valueOf(alcoholInfo[i].getWinePercentage()).doubleValue());
+        countrysTotalInfo += " \n";
+        countrysTotalInfo += "Spirits percentage: ";
+        countrysTotalInfo += String.valueOf(Double.valueOf(alcoholInfo[i].getSpiritsPercentage()).doubleValue());
+        countrysTotalInfo += " \n";
+        countrysTotalInfo += "Other percentage: ";
+        countrysTotalInfo += String.valueOf(Double.valueOf(alcoholInfo[i].getOtherPercentage()).doubleValue());
+        countrysTotalInfo += " \n";
+        countrysTotalInfo += "Past projection percentage: ";
+        countrysTotalInfo += String.valueOf(Double.valueOf(alcoholInfo[i].getPastProjection()).doubleValue());
+        countrysTotalInfo += " \n";
+        countrysTotalInfo += "Future projection percentage: ";
+        countrysTotalInfo += String.valueOf(Double.valueOf(alcoholInfo[i].getFutureProjection()).doubleValue());
+        countrysTotalInfo += " \n";
+
+        placeholder = countrysTotalInfo;
+      }
+  }
+    user.close();
+    System.out.println(placeholder);
+    return "ah";
+  }
   ///////////////////////////////////////////////////////////////////
   public static String countryTotalConsumption() {
     Scanner minMax = new Scanner(System.in);
@@ -40,7 +105,7 @@ public class Scan {
     String minOrMax = minMax.nextLine();
     
     alcoholSet alcoholInfo[] = Scan.read();
-    if (minOrMax.equals("max")) {
+    if (minOrMax.toLowerCase().equals("max")) {
       double max = 0.0;
       
       String countriesMostConsumption = "Countries with most total consumption: \n";
@@ -57,6 +122,7 @@ public class Scan {
         }
       }
       System.out.println(countriesMostConsumption);
+      minMax.close();
     }
     else {
       double min = 9999.99;
@@ -86,7 +152,7 @@ public class Scan {
     String minOrMax = minMax.nextLine();
     
     alcoholSet alcoholInfo[] = Scan.read();
-    if (minOrMax.equals("max")) {
+    if (minOrMax.toLowerCase().equals("max")) {
       double max = 0.0;
       
       String countriesMostRecordedConsumption = "Countries with most recorded consumption: \n";
@@ -103,6 +169,7 @@ public class Scan {
         }
       }
       System.out.println(countriesMostRecordedConsumption);
+      minMax.close();
     }
     else {
       double min = 9999.99;
@@ -132,7 +199,7 @@ public class Scan {
     String minOrMax = minMax.nextLine();
     
     alcoholSet alcoholInfo[] = Scan.read();
-    if (minOrMax.equals("max")) {
+    if (minOrMax.toLowerCase().equals("max")) {
       double max = 0.0;
       
       String countriesMostUnrecordedConsumption = "Countries with most unrecorded consumption: \n";
@@ -149,6 +216,7 @@ public class Scan {
         }
       }
       System.out.println(countriesMostUnrecordedConsumption);
+      minMax.close();
     }
     else {
       double min = 9999.99;
@@ -178,7 +246,7 @@ public class Scan {
     String minOrMax = minMax.nextLine();
     
     alcoholSet alcoholInfo[] = Scan.read();
-    if (minOrMax.equals("max")) {
+    if (minOrMax.toLowerCase().equals("max")) {
       double max = 0.0;
       
       String countriesMostBeerPercentage = "Countries with most beer percentage: \n";
@@ -195,6 +263,7 @@ public class Scan {
         }
       }
       System.out.println(countriesMostBeerPercentage);
+      minMax.close();
     }
     else {
       double min = 9999.99;
@@ -223,7 +292,7 @@ public class Scan {
     String minOrMax = minMax.nextLine();
     
     alcoholSet alcoholInfo[] = Scan.read();
-    if (minOrMax.equals("max")) {
+    if (minOrMax.toLowerCase().equals("max")) {
       double max = 0.0;
       
       String countriesMostWinePercentage = "Countries with most wine percentage: \n";
@@ -240,6 +309,7 @@ public class Scan {
         }
       }
       System.out.println(countriesMostWinePercentage);
+      minMax.close();
     }
     else {
       double min = 9999.99;
@@ -269,7 +339,7 @@ public class Scan {
     String minOrMax = minMax.nextLine();
     
     alcoholSet alcoholInfo[] = Scan.read();
-    if (minOrMax.equals("max")) {
+    if (minOrMax.toLowerCase().equals("max")) {
       double max = 0.0;
       
       String countriesMostSpiritsPercentage = "Countries with most spirits percentage: \n";
@@ -286,6 +356,7 @@ public class Scan {
         }
       }
       System.out.println(countriesMostSpiritsPercentage);
+      minMax.close();
     }
     else {
       double min = 9999.99;
@@ -315,7 +386,7 @@ public class Scan {
     String minOrMax = minMax.nextLine();
     
     alcoholSet alcoholInfo[] = Scan.read();
-    if (minOrMax.equals("max")) {
+    if (minOrMax.toLowerCase().equals("max")) {
       double max = 0.0;
       
       String countriesMostOtherPercentage = "Countries with most other percentage: \n";
@@ -332,6 +403,7 @@ public class Scan {
         }
       }
       System.out.println(countriesMostOtherPercentage);
+      minMax.close();
     }
     else {
       double min = 9999.99;
@@ -361,7 +433,7 @@ public class Scan {
     String minOrMax = minMax.nextLine();
     
     alcoholSet alcoholInfo[] = Scan.read();
-    if (minOrMax.equals("max")) {
+    if (minOrMax.toLowerCase().equals("max")) {
       double max = 0.0;
       
       String countriesMostPastProjection = "Countries with most past projection: \n";
@@ -378,6 +450,7 @@ public class Scan {
         }
       }
       System.out.println(countriesMostPastProjection);
+      minMax.close();
     }
     else {
       double min = 9999.99;
@@ -407,7 +480,7 @@ public class Scan {
     String minOrMax = minMax.nextLine();
     
     alcoholSet alcoholInfo[] = Scan.read();
-    if (minOrMax.equals("max")) {
+    if (minOrMax.toLowerCase().equals("max")) {
       double max = 0.0;
       
       String countriesMostFutureProjection = "Countries with most Future Projection: \n";
@@ -424,6 +497,7 @@ public class Scan {
         }
       }
       System.out.println(countriesMostFutureProjection);
+      minMax.close();
     }
     else {
       double min = 9999.99;

@@ -4,10 +4,16 @@ class Main {
   public static void main(String[] args) {
     Scan.read();
     Scanner userwants = new Scanner(System.in);
-    System.out.println("What would you like to analyze?: ");
+    System.out.println("What would you like to analyze in this worldwide Beer Consumption data?: ");
   
     String userWants = userwants.nextLine();
-    if (userWants.equals("total_consumption")) {
+    if (userWants.equals("specific_country_info")) {
+      Scan.specificCountryInfo();
+    }
+    else if (userWants.equals("country_info")) {
+      Scan.countryInfo();
+    }
+    else if (userWants.equals("total_consumption")) {
       Scan.countryTotalConsumption();
     } 
     else if (userWants.equals("recorded_consumption")) {
@@ -33,6 +39,11 @@ class Main {
     }
     else if (userWants.equals("future_projection")) {
       Scan.countryFutureProjection();
+    }
+    else {
+      System.out.println("Please restart and try again with a valid input!");
+      System.out.println("Your options for the input are:");
+      System.out.println("total_country_info \n country_info \n total_consumption \nrecorded_consumption \nunrecorded_consumption \nbeer_percentage \nwine_percentage \nspirtis_percentage \nother_percentage \npast_projection \nfuture_projection");
     }
     userwants.close();
   }

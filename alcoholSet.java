@@ -17,6 +17,7 @@ public class alcoholSet {
     this.recorded_consumption = recorded_consumption; 
     this.unrecorded_consumption = unrecorded_consumption;
     this.beer_percentage = beer_percentage;
+    this.wine_percentage = wine_percentage;
     this.spirits_percentage = spirits_percentage;
     this.other_percentage = other_percentage;
     this.past_projection = past_projection;
