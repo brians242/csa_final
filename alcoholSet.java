@@ -10,7 +10,7 @@ public class alcoholSet {
   private String other_percentage;
   private String past_projection;
   private String future_projection;
-
+  // defines multiple variables connecting to our data
   public alcoholSet(String country, String total_consumption, String recorded_consumption, String unrecorded_consumption, String beer_percentage, String wine_percentage, String spirits_percentage, String other_percentage, String past_projection, String future_projection) {
     this.country = country;
     this.total_consumption = total_consumption;
@@ -23,6 +23,7 @@ public class alcoholSet {
     this.past_projection = past_projection;
     this.future_projection = future_projection;
   }
+  // we can use this alcoholSet later in Scan.java so that we can run through each country's data values
   public alcoholSet() {
     country = new String("");
   }
@@ -32,6 +33,9 @@ public class alcoholSet {
   public void setCountry(String country) {
     this.country = country;
   }
+  // sets what the country will be
+
+  // the following methods will return the following data values and we can specify the country that the user wanted
   public double getTotalConsumption() {
     return Double.valueOf(total_consumption).doubleValue();
   }

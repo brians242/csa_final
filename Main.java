@@ -4,8 +4,8 @@ class Main {
   public static void main(String[] args) {
     Scan.read();
     Scanner userwants = new Scanner(System.in);
-    System.out.println("What would you like to analyze in this worldwide Beer Consumption data?: ");
-  
+    System.out.println("What would you like to analyze in this worldwide Alcohol Consumption data?: ");
+    // the next conditionals check for the user's first input and runs the methods that the user wants
     String userWants = userwants.nextLine();
     if (userWants.equals("specific_country_info")) {
       Scan.specificCountryInfo();
@@ -40,10 +40,11 @@ class Main {
     else if (userWants.equals("future_projection")) {
       Scan.countryFutureProjection();
     }
+    // the else is for in case the user inputs an incorrect input and asks them to restart correctly
     else {
-      System.out.println("Please restart and try again with a valid input!");
+      System.out.println("\nPlease restart and try again with a valid input!");
       System.out.println("Your options for the input are:");
-      System.out.println("total_country_info \n country_info \n total_consumption \nrecorded_consumption \nunrecorded_consumption \nbeer_percentage \nwine_percentage \nspirtis_percentage \nother_percentage \npast_projection \nfuture_projection");
+      System.out.println("specific_country_info \ncountry_info \ntotal_country_info \ntotal_consumption \nrecorded_consumption \nunrecorded_consumption \nbeer_percentage \nwine_percentage \nspirts_percentage \nother_percentage \npast_projection \nfuture_projection");
     }
     userwants.close();
   }
